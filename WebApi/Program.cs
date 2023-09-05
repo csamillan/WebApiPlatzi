@@ -1,4 +1,5 @@
 using WebApi.Middlewares;
+using WebApi.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+//builder.Services.AddScoped<IHelloWorldService, HelloWorldService>(); //Agregando dependencias con Interfases
+builder.Services.AddScoped<IHelloWorldService>(p => new HelloWorldService()); //Agregando dependencias sin Interfases
 
 var app = builder.Build();
 
@@ -23,7 +26,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 //app.UseWelcomePage(); // middlewares que crea una pagina de bienvenida automatico
-app.UseTimeMiddleWare();
+//app.UseTimeMiddleWare();
 
 app.MapControllers();
 

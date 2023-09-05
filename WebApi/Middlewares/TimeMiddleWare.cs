@@ -18,7 +18,7 @@
                 await context.Response.WriteAsync(DateTime.Now.ToShortDateString());
             }
 
-            await next(context); // en esta posicion, solo se muestra la respuesta del middlaware ya que primero se ejecutara esta logica antes de los demas request
+            //await next(context); // en esta posicion, solo se muestra la respuesta del middlaware ya que primero se ejecutara esta logica antes de los demas request
         }
     }
 
