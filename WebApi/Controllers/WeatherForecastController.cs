@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace WebApi.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
@@ -30,7 +30,10 @@ namespace WebApi.Controllers
             }
         }
 
-        [HttpGet(Name = "GetWeatherForecast")]
+        [HttpGet]
+        [Route("Get/weatherForecast")]
+        [Route("Get/weatherForecast2")] //se puede agregar varias rutas, pero no es una buena practica.
+        [Route("[action]")] //action es una palabra q toma el nombre del metodo, y lo convierte en una ruta utilizable
         public IEnumerable<WeatherForecast> Get()
         {
             return ListWeatherForecast;
