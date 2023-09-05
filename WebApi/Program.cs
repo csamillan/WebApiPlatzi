@@ -20,6 +20,8 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
+app.UseWelcomePage(); // middlewares que crea una pagina de bienvenida automatico
+
 app.MapControllers();
 
 app.Run();
