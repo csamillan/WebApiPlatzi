@@ -1,10 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using PlatziEntityFramework;
-using PlatziEntityFramework.Model;
+using WebApi.Model;
 
 namespace WebApi.Service
 {
-    public class WorkService
+    public class WorkService : IWorkService
     {
 
         WorkContext context;
@@ -54,15 +53,15 @@ namespace WebApi.Service
             }
         }
 
-        public interface IWorkService
-        {
-            IEnumerable<Work> Get();
+    }
+    public interface IWorkService
+    {
+        IEnumerable<Work> Get();
 
-            Task Save(Work Work);
+        Task Save(Work Work);
 
-            Task Update(Guid id, Work Work);
+        Task Update(Guid id, Work Work);
 
-            Task Delete(Guid id);
-        }
+        Task Delete(Guid id);
     }
 }

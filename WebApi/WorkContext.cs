@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PlatziEntityFramework.Model;
+using WebApi.Model;
 
-namespace PlatziEntityFramework
+namespace WebApi
 {
-    public class WorkContext: DbContext
+    public class WorkContext : DbContext
     {
         public DbSet<Category> Categories { get; set; }
 
@@ -30,7 +30,7 @@ namespace PlatziEntityFramework
             });
 
             List<Work> worksInit = new List<Work>();
-            worksInit.Add(new Work() { WorkId = Guid.Parse("32a46c4e-e2f2-4b0c-9fc1-cf0f4cbe06C0"), CategoryId = Guid.Parse("32a46c4e-e2f2-4b0c-9fc1-cf0f4cbe06b0"), Priority =  Priority.Medium, Title = "Pago de Servicios Publicos", DateCreate = DateTime.Now });
+            worksInit.Add(new Work() { WorkId = Guid.Parse("32a46c4e-e2f2-4b0c-9fc1-cf0f4cbe06C0"), CategoryId = Guid.Parse("32a46c4e-e2f2-4b0c-9fc1-cf0f4cbe06b0"), Priority = Priority.Medium, Title = "Pago de Servicios Publicos", DateCreate = DateTime.Now });
             worksInit.Add(new Work() { WorkId = Guid.Parse("32a46c4e-e2f2-4b0c-9fc1-cf0f4cbe06C1"), CategoryId = Guid.Parse("32a46c4e-e2f2-4b0c-9fc1-cf0f4cbe06b1"), Priority = Priority.Low, Title = "terminar de ver pelicula en netflix", DateCreate = DateTime.Now });
             worksInit.Add(new Work() { WorkId = Guid.Parse("32a46c4e-e2f2-4b0c-9fc1-cf0f4cbe06C2"), CategoryId = Guid.Parse("32a46c4e-e2f2-4b0c-9fc1-cf0f4cbe06b1"), Priority = Priority.High, Title = "Dar examenes de devsu antes del domingo", DateCreate = DateTime.Now });
             modelBuilder.Entity<Work>(Work =>

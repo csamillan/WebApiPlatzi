@@ -1,7 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using WebApi.Model;
 
-namespace PlatziEntityFramework.Model
+namespace WebApi.Model
 {
     public class Work
     {

@@ -1,7 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
 
-namespace PlatziEntityFramework.Model
+namespace WebApi.Model
 {
     public class Category
     {
@@ -10,7 +9,7 @@ namespace PlatziEntityFramework.Model
 
         //[Required]
         //[MaxLength(150)]
-        public string Name { get; set; }    
+        public string Name { get; set; }
 
         public string Description { get; set; }
 

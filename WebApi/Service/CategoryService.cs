@@ -1,10 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using PlatziEntityFramework;
-using PlatziEntityFramework.Model;
+﻿using WebApi.Model;
 
 namespace WebApi.Service
 {
-    public class CategoryService
+    public class CategoryService : ICategoryService
     {
 
         WorkContext context;
@@ -49,17 +47,17 @@ namespace WebApi.Service
                 await context.SaveChangesAsync();
             }
         }
+ 
+    }
+    public interface ICategoryService
+    {
+        IEnumerable<Category> Get();
 
-        public interface ICategoryService
-        {
-            IEnumerable<Category> Get();
+        Task Save(Category category);
 
-            Task Save(Category category);
+        Task Update(Guid id, Category category);
 
-            Task Update(Guid id, Category category);
+        Task Delete(Guid id);
 
-            Task Delete(Guid id);
-
-        }
     }
 }
