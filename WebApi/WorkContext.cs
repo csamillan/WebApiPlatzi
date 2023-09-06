@@ -26,7 +26,7 @@ namespace PlatziEntityFramework
                 Category.Property(p => p.Description).IsRequired(false);
                 Category.Property(p => p.Weigth);
 
-                Category.HasData(categoriesInit); //Permite crear datos iniciales
+                Category.HasData(categoriesInit);
             });
 
             List<Work> worksInit = new List<Work>();
